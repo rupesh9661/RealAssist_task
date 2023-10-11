@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import generatePDF, { Options } from "react-to-pdf";
+import CrimeDataChart from "./component/CrimeDataChart";
 
-function App() {
+const options= {
+  filename: "Burglary_arrests.pdf"
+};
+
+const getTargetElement = () => document.getElementById("chart");
+
+const downloadPdf = () => generatePDF(getTargetElement, options);
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <button onClick={downloadPdf} style={{margin:'5px'}}>Download PDF</button>
+      <div id="chart">
+       <CrimeDataChart />
+      </div>
+    </>
   );
-}
+};
 
 export default App;
