@@ -31,7 +31,7 @@ const options = {
     },
     title: {
       display: true,
-      text: 'Line Chart Of Arrests In Burglary',
+      text: 'Line Chart Of Burglary Arrests',
     },
   },
 };
@@ -77,11 +77,11 @@ const CrimeDataChart = () => {
   }
   return <section style={{padding:'5px 20px'}}>
     <header style={{ display:'flex', justifyContent:'space-between', borderBottom: '2px solid #1463ff', position:'sticky', top:'5px'}}>
-      <img src={'realAssistLogo.png'} height={30}/>
+      <img src={require('./realAssistLogo.png')} height={30}/>
       <p>New Ashok Nagar, Delhi, 110096</p>
     </header>
-    <section style={{ background:'aliceblue', padding:'20px'}}>
-    <div style={{display:'flex'}}>
+    <section style={{ background:'aliceblue', padding:'20px', margin:'20px'}}>
+    <div style={{display:'flex', width:'100%'}}>
       <span style={{width:'10%'}}>Crime </span>
       <hr style={{border: '2px solid #1463ff', width:'90%', height:'0px'}} />
     </div>
@@ -90,7 +90,7 @@ const CrimeDataChart = () => {
       <Line options={options} data={chartData} height={100}/>
     </div>
     </section>
-    <footer style={{ display:'flex', justifyContent:'space-between', borderTop: '2px solid #1463ff', position:'sticky', bottom:'10px'}}>
+    <footer style={{display:'flex', justifyContent:'space-between', borderTop: '2px solid #1463ff'}}>
       <p>Report Generated On {new Date().toLocaleDateString()}</p>
       <p>RealAssist | Crime | Arrests | Report</p>
     </footer>
